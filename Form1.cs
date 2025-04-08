@@ -100,10 +100,11 @@ namespace TriviaPro
                         opcionesRadioButtons[i].Visible = false;
                     }
                 }
-
-                temporizador.Iniciar(preguntaActual.ObtenerTiempo());
+                progressTiempo.Minimum = 0;
                 progressTiempo.Maximum = preguntaActual.ObtenerTiempo();
                 progressTiempo.Value = preguntaActual.ObtenerTiempo();
+
+                temporizador.Iniciar(preguntaActual.ObtenerTiempo());
             }
             catch (Exception ex)
             {
@@ -176,7 +177,12 @@ namespace TriviaPro
         private void ActualizarTiempoVisual(int segundos)
         {
             lblTiempo.Text = $"Tiempo: {segundos}s";
-            progressTiempo.Value = segundos;
+
+            // Validación para evitar el error de rango
+            if (segundos >= progressTiempo.Minimum && segundos <= progressTiempo.Maximum)
+            {
+                progressTiempo.Value = segundos;
+            }
         }
 
         private void FinalizarJuego()
