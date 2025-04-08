@@ -52,8 +52,19 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logica\TemporizadorTrivia.cs" />
+    <Compile Include="Models\Jugador.cs" />
+    <Compile Include="Models\Pregunta.cs" />
+    <Compile Include="Models\PreguntaDificil.cs" />
+    <Compile Include="Models\PreguntaFacil.cs" />
+    <Compile Include="Models\PreguntaFactory.cs" />
+    <Compile Include="Models\PreguntaMedia.cs" />
+    <Compile Include="Models\Puntaje.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
